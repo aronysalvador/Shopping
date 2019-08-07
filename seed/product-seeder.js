@@ -1,16 +1,34 @@
 var Product = require('../models/product');
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/shopping');
+mongoose.connect('mongodb://localhost:27017/shopping', { useNewUrlParser: true });
 
 var products = [
     
     new Product({
-        imagesPath:'data:image/jpeg;base64,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',
-        title:'Nevera',
-        description:'Ideal para la casa',
-        price: 60 
+        image:'https://www.northoptics.cl/wp-content/uploads/2017/09/microscopio-bilogico-barride-1.jpg',
+        title:'Microscopio',
+        description:'Microscopios Laser de Superficie, Metalográficos, de Polarización. Fabricados en la misma fabrica de Zeiss, con décadas de trayectoria en Chile y el mundo. ',
+        price: 500 
     }),
+    new Product({
+        image:'https://images-na.ssl-images-amazon.com/images/I/41clC8meQiL._SX425_.jpg',
+        title:'Televisor',
+        description:'El televisor compatible con el alto rango dinámico (HDR) cambiará tu forma de ver televisión.',
+        price: 500 
+    }),
+    new Product({
+        image:'https://images-na.ssl-images-amazon.com/images/I/51qW82GJeyL._SY355_.jpg',
+        title:'Telefono',
+        description:'El smartphone más potente de la serie Galaxy J, y entre sus características se destacan un procesador octa-core Snapdragon 615',
+        price: 1000
+    }),
+    new Product({
+        image:'https://images-na.ssl-images-amazon.com/images/I/51XMN93MlsL._SX342_.jpg',
+        title:'Lavadora',
+        description:'Lavadora automática con nuevo diseño y sistema de dosificación automática: ahorra agua y detergente. Tecnología i-DOS',
+        price: 500 
+    })
 
 ];
 
