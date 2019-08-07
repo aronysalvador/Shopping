@@ -163,7 +163,7 @@
     </section> <!-- header-main .// -->
     </header> <!-- section-header.// -->
 
-    <!-- ========================= SECTION MAIN ========================= -->
+    {{!-- <!-- ========================= SECTION MAIN ========================= -->
     <section class="section-main bg padding-y-sm">
     <div class="container">
     <div class="card">
@@ -248,10 +248,10 @@
 
     </div> <!-- container .//  -->
     </section>
-    <!-- ========================= SECTION MAIN END// ========================= -->
+    <!-- ========================= SECTION MAIN END// ========================= --> --}}
 
 
-    <!-- ========================= SECTION CONTENT ========================= -->
+    {{!-- <!-- ========================= SECTION CONTENT ========================= -->
     <section class="section-content padding-y-sm bg">
     <div class="container">
 
@@ -350,9 +350,9 @@
 
     </div> <!-- container .//  -->
     </section>
-    <!-- ========================= SECTION CONTENT END// ========================= -->
+    <!-- ========================= SECTION CONTENT END// ========================= --> --}}
 
-    <!-- ========================= SECTION CONTENT ========================= -->
+    {{!-- <!-- ========================= SECTION CONTENT ========================= -->
     <section class="section-content padding-y-sm bg">
     <div class="container">
 
@@ -514,7 +514,7 @@
 
     </div><!-- container // -->
     </section>
-    <!-- ========================= SECTION REQUEST .END// ========================= -->
+    <!-- ========================= SECTION REQUEST .END// ========================= --> --}}
 
     <!-- ========================= SECTION ITEMS ========================= -->
     <section class="section-request bg padding-y-sm">
@@ -523,69 +523,44 @@
       <h4 class="title-section bg text-uppercase">Recommended items</h4>
     </header>
 
-    <div class="row-sm">
-    <div class="col-md-2">
-      <figure class="card card-product">
-        <div class="img-wrap"> <img src="/images/items/3.jpg"></div>
-        <figcaption class="info-wrap">
-          <h6 class="title "><a href="#">Good item name</a></h6>
-          
-          <div class="price-wrap">
-            <span class="price-new">$1280</span>
-            <del class="price-old">$1980</del>
-          </div> <!-- price-wrap.// -->
-          
-        </figcaption>
-      </figure> <!-- card // -->
-    </div> <!-- col // -->
-    <div class="col-md-2">
-      <figure class="card card-product">
-        <div class="img-wrap"> <img src="/images/items/4.jpg"></div>
-        <figcaption class="info-wrap">
-          <h6 class="title "><a href="#">The name of product</a></h6>
-          <div class="price-wrap">
-            <span class="price-new">$280</span>
-          </div> <!-- price-wrap.// -->
-        </figcaption>
-      </figure> <!-- card // -->
-    </div> <!-- col // -->
-    <div class="col-md-2">
-      <figure class="card card-product">
-        <div class="img-wrap"> <img src="/images/items/5.jpg"></div>
-        <figcaption class="info-wrap">
-          <h6 class="title "><a href="#">Name of product</a></h6>
-          <div class="price-wrap">
-            <span class="price-new">$280</span>
-          </div> <!-- price-wrap.// -->
-        </figcaption>
-      </figure> <!-- card // -->
-    </div> <!-- col // -->
-    <div class="col-md-2">
-      <figure class="card card-product">
-        <div class="img-wrap"> <img src="/images/items/6.jpg"></div>
-        <figcaption class="info-wrap">
-          <h6 class="title "><a href="#">The name of product</a></h6>
-          <div class="price-wrap">
-            <span class="price-new">$280</span>
-          </div> <!-- price-wrap.// -->
-        </figcaption>
-      </figure> <!-- card // -->
-    </div> <!-- col // -->
-    <div class="col-md-2">
-      <figure class="card card-product">
-        <div class="img-wrap"> <img src="/images/items/3.jpg"></div>
-        <figcaption class="info-wrap">
-          <h6 class="title "><a href="#">Good item name</a></h6>
-          
-          <div class="price-wrap">
-            <span class="price-new">$1280</span>
-            <del class="price-old">$1980</del>
-          </div> <!-- price-wrap.// -->
-          
-        </figcaption>
-      </figure> <!-- card // -->
-    </div> <!-- col // -->
-    <div class="col-md-2">
+    {{# each products}}
+   
+
+      <div class="col-md-12">
+        <figure class="card card-product">
+          <div class="img-wrap"> <img src="/images/items/4.jpg"></div>
+          <figcaption class="info-wrap">
+            <h6 class="title "><a href="#">{{this.title}}</a></h6>
+            <div class="price-wrap">
+              <span class="price-new">{{this.price}}</span>
+            </div> <!-- price-wrap.// -->
+          </figcaption>
+        </figure> <!-- card // -->
+      </div> 
+        {{!-- <div class="row">
+          {{# each this}}
+            <div class="col-md-6">
+              <figure class="card card-product">
+                <div class="img-wrap"> <img src="/images/items/3.jpg"></div>
+                <figcaption class="info-wrap">
+                  <h6 class="title "><a href="#">{{this.title}}</a></h6>
+                  
+                  <div class="price-wrap">
+                    <span class="price-new">$1280</span>
+                    <del class="price-old">$1980</del>
+                  </div> <!-- price-wrap.// -->
+                  
+                </figcaption>
+              </figure> <!-- card // -->
+            </div> <!-- col // -->
+          {{/each}}  
+        </div> <!-- row.// --> --}}
+    {{/each}}
+
+
+
+
+    {{!-- <div class="col-md-2">
       <figure class="card card-product">
         <div class="img-wrap"> <img src="/images/items/4.jpg"></div>
         <figcaption class="info-wrap">
@@ -665,6 +640,54 @@
         </figcaption>
       </figure> <!-- card // -->
     </div> <!-- col // -->
+    <div class="col-md-2">
+      <figure class="card card-product">
+        <div class="img-wrap"> <img src="/images/items/3.jpg"></div>
+        <figcaption class="info-wrap">
+          <h6 class="title "><a href="#">Good item name</a></h6>
+          
+          <div class="price-wrap">
+            <span class="price-new">$1280</span>
+            <del class="price-old">$1980</del>
+          </div> <!-- price-wrap.// -->
+          
+        </figcaption>
+      </figure> <!-- card // -->
+    </div> <!-- col // -->
+    <div class="col-md-2">
+      <figure class="card card-product">
+        <div class="img-wrap"> <img src="/images/items/4.jpg"></div>
+        <figcaption class="info-wrap">
+          <h6 class="title "><a href="#">The name of product</a></h6>
+          <div class="price-wrap">
+            <span class="price-new">$280</span>
+          </div> <!-- price-wrap.// -->
+        </figcaption>
+      </figure> <!-- card // -->
+    </div> <!-- col // -->
+    <div class="col-md-2">
+      <figure class="card card-product">
+        <div class="img-wrap"> <img src="/images/items/5.jpg"></div>
+        <figcaption class="info-wrap">
+          <h6 class="title "><a href="#">Name of product</a></h6>
+          <div class="price-wrap">
+            <span class="price-new">$280</span>
+          </div> <!-- price-wrap.// -->
+        </figcaption>
+      </figure> <!-- card // -->
+    </div> <!-- col // -->
+    <div class="col-md-2">
+      <figure class="card card-product">
+        <div class="img-wrap"> <img src="/images/items/6.jpg"></div>
+        <figcaption class="info-wrap">
+          <h6 class="title "><a href="#">The name of product</a></h6>
+          <div class="price-wrap">
+            <span class="price-new">$280</span>
+          </div> <!-- price-wrap.// -->
+        </figcaption>
+      </figure> <!-- card // -->
+    </div> <!-- col // -->
+     --}}
     </div> <!-- row.// -->
 
 
@@ -672,7 +695,7 @@
     </section>
     <!-- ========================= SECTION ITEMS .END// ========================= -->
 
-    <!-- ========================= SECTION LINKS ========================= -->
+    {{!-- <!-- ========================= SECTION LINKS ========================= -->
     <section class="section-links bg padding-y-sm">
     <div class="container">
     <div class="row">
@@ -739,7 +762,7 @@
     </section>
     <!-- ========================= SECTION SUBSCRIBE END.//========================= -->
 
-    <!-- ========================= SECTION SUBSCRIBE END.//========================= -->
+    <!-- ========================= SECTION SUBSCRIBE END.//========================= --> --}}
 
     <!-- ========================= FOOTER ========================= -->
     <footer class="section-footer bg-secondary">
